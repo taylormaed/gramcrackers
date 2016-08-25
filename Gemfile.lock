@@ -67,3 +67,5 @@ DEPENDENCIES
   rspec
   sinatra
   sinatra-activerecord
+
+gem ‘puma’
