@@ -1,0 +1,18 @@
+
+<div class="show_anagrams">
+	<h1>Anagrams for <br><br><span> <%= "#{@word.upcase}" %></span></h1>
+	<br><img src="/images/arrow.png" alt="arrow" style="width: 50px;height: 50px; text-align: center;" /><br>
+	<ul class="list">	
+		<% if !@anagrams.nil? %>
+		<% @anagrams.each do |anagram| %>
+   		<br> <br>
+   		<li>
+   		<%= "#{anagram}" %>
+   		</li>
+  		<% end %>
+  		<%else %>
+  			<%= "No Anagrams for this word" %>
+  		<% end %>
+  	</ul>
+ </div>
+ 
