@@ -68,4 +68,3 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
 
-gem ‘puma’
