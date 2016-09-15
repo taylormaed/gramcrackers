@@ -2,7 +2,9 @@ class Word < ActiveRecord::Base
 
 	def self.find_anagrams(string)
 		# Convert word to an array of letters
-		letters = string.split(//)
+        combinations = []
+        
+        letters = string.split(//)
 
 		# Create an array to store our anagrams
 		anagrams = []
