@@ -1,61 +1,49 @@
 class Word < ActiveRecord::Base
 
-	def self.find_anagrams(string)
-		# Convert word to an array of letters
-        combinations = []
-        
-        letters = string.split(//)
+def self.find_anagrams(string)
+combinations = []
 
-		# Create an array to store our anagrams
-		anagrams = []
+    # Convert word to an array of letters
+    letters = string.split(//)
 
-		# Loop through each letter in letters
-		letters.each do |letter|
-			# Select the remaining letters
-			remaining = letters.select { |l| l != letter}
+    # Create an array to store our anagrams
+    anagrams = []
 
-			# Create a new word by combining the letter + the remaining letters
-			# Add a new word to an anagrams array
+    # Loop through each letter in letters
+    letters.each do |letter|
+    
+    # Select the remaining letters
+    remaining = letters.select { |l| l != letter}
 
-			anagrams << letter + reverse_letters(remaining).join('')
-		end
+# Create a new word by combining the letter + the remaining letters
+# Add new word to anagrams array
+anagrams << letter + remaining.join('')
 
+# Create a new word by combining the letter + the reverse of the remaining letters
+# Add a new word to anagrams array
+anagrams << letter + reverse_letters(remaining).join('')
+end
 
-        # Return anagrams array
-        anagrams.each do |combo|
-        if Word.find_by_text(combo).present?
-            combinations << combo
-            end
-        end
+#Return anagram array
+anagrams.each do |combo|
+    if Word.find_by_text(combo).present?
+        combinations << combo
+    end
+end
 
-            combinations
-        end
+combinations
+end
 
-	
-	def self.reverse_letters(letters)
-	# create a new array of two items
-		length = letters.length
-		reversed_letters = Array.new(length) 
+def self.reverse_letters(letters)
+# Create a new array of 2 items
+length = letters.length
+reversed_letters = Array.new(length)
 
-		# loop through letters and keep index
-		letters.each_with_index do |letter, index|
-			reversed_letters[length - index - 1] = letter
-		end
+# Loop through letters and keep index
+letters.each_with_index do |letter, index|
+    reversed_letters[length - index - 1] = letter
+end
 
-		reversed_letters
-	end
-
-	def self.find_anagram(letters)
-
-		find_anagram(letters) # must be 3 letters
-    	length=letters.length
-   	 	word_array = letters.split(//) # place the characters of the word into an array
-    	output_array = word_array.permutation.map{ |i| i.join } # joins the 3 character array with all permutations and inserts each into output array.
-        
-        return output_array
-        
-	end
-
-	
+reversed_letters
 end
 
