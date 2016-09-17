@@ -130,3 +130,11 @@ img {
   font-size: 70px;
   text-align: center;
 }
+
+.error_message {
+  color: red;
+  font-size: 48px;
+  border: dashed red;
+  width: 320px;
+
+}
