@@ -42,3 +42,26 @@ class Word < ActiveRecord::Base
 		end
 	end
 
+def self.three_letters?(input)
+    if input.length <= 3 and input.length >= 1
+        return true
+        else
+        return false
+    end
+end
+
+def self.distinct_letters?(input)
+    letter_array = input.chars
+    unique_letters = letter_array.uniq
+    if unique_letters.length < letter_array.length
+        false
+        else
+        true
+    end
+end
+
+def self.valid_input?(input)
+    if input.length > 3 or !distinct_letters?(input) or input.length == 0 
+        raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
+    end
+end
