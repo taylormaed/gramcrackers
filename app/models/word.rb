@@ -64,5 +64,6 @@ def self.valid_input?(input)
         raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
     end
 end
+end
 
 
