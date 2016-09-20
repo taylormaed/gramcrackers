@@ -28,7 +28,7 @@ class Word < ActiveRecord::Base
 	end
 
 
-		def self.reverse_letters(letters)
+	def self.reverse_letters(letters)
 			# create a new array of 2 items
 			length = letters.length
 			reversed_letters = Array.new(length)
@@ -40,8 +40,7 @@ class Word < ActiveRecord::Base
 
 			reversed_letters
 		end
-	end
-
+	
 def self.three_letters?(input)
     if input.length <= 3 and input.length >= 1
         return true
@@ -65,3 +64,5 @@ def self.valid_input?(input)
         raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
     end
 end
+
+
