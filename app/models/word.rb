@@ -1,4 +1,11 @@
 class Word < ActiveRecord::Base
+	def add_letters
+		characters = self.text.chars
+  		alphabetized_characters = characters.sort
+  		word.letters = alphabetized_characters.join
+  		word.save
+	end
+
 	def self.find_anagrams(string)
 		combinations = []
 		# Convert word to an array of letters
@@ -27,8 +34,7 @@ class Word < ActiveRecord::Base
 		combinations
 	end
 
-
-	def self.reverse_letters(letters)
+def self.reverse_letters(letters)
 			# create a new array of 2 items
 			length = letters.length
 			reversed_letters = Array.new(length)
@@ -59,11 +65,18 @@ def self.distinct_letters?(input)
     end
 end
 
-def self.valid_input?(input)
+
+ def self.valid_input?(input)
     if input.length > 3 or !distinct_letters?(input) or input.length == 0 
-        raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
+        #raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
     end
 end
+
 end
+
+
+
+	
+
 
 
