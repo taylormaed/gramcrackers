@@ -41,8 +41,8 @@ class Word < ActiveRecord::Base
 			reversed_letters
 		end
 	
-def self.three_letters?(input)
-    if input.length <= 3 and input.length >= 1
+	def self.three_letters?(input)
+    	if input.length <= 3 and input.length >= 1
         return true
         else
         return false
