@@ -131,7 +131,7 @@ img {
   text-align: center;
 }
 
-.error_message {
+.error {
   color: red;
   font-size: 26px;
   border: dashed red;

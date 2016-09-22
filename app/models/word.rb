@@ -5,7 +5,7 @@ class Word < ActiveRecord::Base
 		characters = self.text.chars
   		alphabetized_characters = characters.sort
   		self.letters = alphabetized_characters.join
-  		word.save
+  		
 	end
 
 	def self.find_anagrams(string)
@@ -70,7 +70,7 @@ end
 
  def self.valid_input?(input)
     if input.length > 3 or !distinct_letters?(input) or input.length == 0 
-        #raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
+        raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
     end
 end
 
