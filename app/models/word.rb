@@ -4,7 +4,7 @@ class Word < ActiveRecord::Base
 	def add_letters
 		characters = self.text.chars
   		alphabetized_characters = characters.sort
-  		word.letters = alphabetized_characters.join
+  		self.letters = alphabetized_characters.join
   		word.save
 	end
 
