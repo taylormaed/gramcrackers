@@ -153,7 +153,7 @@ img {
 
 }
 
-.table_headings {
+.table_headings th {
   text-align: center;
   margin: auto;
   font-family: Montserrat;
