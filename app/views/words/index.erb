@@ -1,13 +1,13 @@
 <h1 class="title_word_table">Words</h1>
 <table class="table">
 <thead>
-	<strong><th class="text-center">Text</th></strong>
-	<strong><th class="text-center">Letters</th></strong>
+	<th class="text-center">Text</th>
+	<th class="text-center">Letters</th>
 </thead>
 <tbody>
 	<% @words.each do |word| %>
 	<tr>
-	<td style="text-align: center">
+	<td class ="borderless" style="text-align: center">
 		<a href="<%= "/words/#{word.id}" %>"><%= word.text %></a></td>
 		<td style="text-align: center"><%= word.letters %></td>
 
