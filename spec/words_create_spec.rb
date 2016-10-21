@@ -11,6 +11,7 @@ describe 'Our Anagrams App' do
   end
   
   it 'shows an index page with words following a get request to /words' do
+      Word.create(text: "skillcrush")
     post("/words", { text: "skillcrush" } )
     expect(Word.find_by_text("skillcrush").present?).to be(true)
   end
