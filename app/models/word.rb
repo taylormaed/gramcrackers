@@ -5,9 +5,9 @@ class Word < ActiveRecord::Base
     validates_uniqueness_of :text
 	
 	def add_letters
-		characters = self.text.chars
-  		alphabetized_characters = characters.sort
-  		self.letters = alphabetized_characters.join
+	characters = self.text.chars
+  	alphabetized_characters = characters.sort
+  	self.letters = alphabetized_characters.join
   		
 	end
 
@@ -39,7 +39,7 @@ class Word < ActiveRecord::Base
 		combinations
 	end
 
-def self.reverse_letters(letters)
+	def self.reverse_letters(letters)
 			# create a new array of 2 items
 			length = letters.length
 			reversed_letters = Array.new(length)
@@ -55,14 +55,14 @@ def self.reverse_letters(letters)
 	
 
 
- def self.valid_input?(input)
-    if Word.find_by_text(input).present? 
+ 	def self.valid_input?(input)
+ 		if Word.find_by_text(input).present? 
         false
-else
+    else
         raise Exception.new("This word cannot be found! You can add it to the dictionary!")
     end
+    
 end
-
 
 
 
