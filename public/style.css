@@ -161,3 +161,17 @@ img {
   font-size: 16px;
 }
 
+.about_word h1 span {
+  font-family: Montserrat;
+  color: #FF0049;
+  font-size: 70px;
+  text-align: center;
+}
+
+.about_word h1 {
+  font-family: Montserrat;
+  color: #FF0049;
+  font-size: 54px;
+  text-align: center;
+  margin: auto;
+}
