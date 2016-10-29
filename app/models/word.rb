@@ -1,5 +1,8 @@
 class Word < ActiveRecord::Base
 	before_create :add_letters
+    before_save :add_letters
+    validates_presence_of :text
+    validates_uniqueness_of :text
 	
 	def add_letters
 		characters = self.text.chars
@@ -49,32 +52,17 @@ def self.reverse_letters(letters)
 			reversed_letters
 		end
 	
-	def self.three_letters?(input)
-    	if input.length <= 3 and input.length >= 1
-        return true
-        else
-        return false
-    end
-end
-
-def self.distinct_letters?(input)
-    letter_array = input.chars
-    unique_letters = letter_array.uniq
-    if unique_letters.length < letter_array.length
-        false
-        else
-        true
-    end
-end
+	
 
 
  def self.valid_input?(input)
-    if input.length > 3 or !distinct_letters?(input) or input.length == 0 
-        raise Exception.new("Your word must be 1-3 characters and all letters must be unique.")
+    if Word.find_by_text(input).present? 
+        false
+else
+        raise Exception.new("This word cannot be found! You can add it to the dictionary!")
     end
 end
 
-end
 
 
 
