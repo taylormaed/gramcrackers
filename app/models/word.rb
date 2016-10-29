@@ -57,9 +57,9 @@ class Word < ActiveRecord::Base
 
  	def self.valid_input?(input)
  		if Word.find_by_text(input).present? 
-        false
-    else
-        raise Exception.new("This word cannot be found! You can add it to the dictionary!")
+ 			false
+ 		else
+			raise Exception.new("This word cannot be found! You can add it to the dictionary!")
     end
     
 end
