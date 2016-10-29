@@ -176,14 +176,14 @@ img {
   margin: auto;
 }
 
-.add_new h1 span {
+.add_new span {
   font-family: Montserrat;
   color: #FF0049;
   font-size: 70px;
   text-align: center;
 }
 
-.add_new h1 {
+.add_new {
   .show_anagrams h1 {
   font-family: Montserrat;
   color: #FF0049;
