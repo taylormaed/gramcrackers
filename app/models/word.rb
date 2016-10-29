@@ -5,10 +5,9 @@ class Word < ActiveRecord::Base
     validates_uniqueness_of :text
 	
 	def add_letters
-	characters = self.text.chars
-  	alphabetized_characters = characters.sort
-  	self.letters = alphabetized_characters.join
-  		
+		characters = self.text.chars
+  		alphabetized_characters = characters.sort
+  		self.letters = alphabetized_characters.join
 	end
 
 	def self.find_anagrams(string)
