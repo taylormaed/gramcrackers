@@ -59,6 +59,7 @@ class Word < ActiveRecord::Base
       raise Exception.new("This word cannot be found! You can add it to the dictionary!")
     end
 end
+end
 
 
 
