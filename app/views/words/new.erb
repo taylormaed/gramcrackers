@@ -5,10 +5,12 @@
         <%= @error %>
       </div>
       <% end %>
-<form class="col-md-3" action="/" method="post">
-<div class="form-group">
-<label for="word">Enter a new word</label>
-<input class="form control" name="text" type="text" />
-<input type="submit" name="btn" class="button button--submit" value="New Word!">
+<form action="/" method="post" class="form">
+
+      <label class="label" for ="word" >Please Enter a New Word</label>
+      <input type="text" name="word">
+
+
+    <input type="submit" name="btn" class="button button--submit" value="New Word!">
+
   </form>
-</div>
