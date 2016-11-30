@@ -49,16 +49,18 @@ class Word < ActiveRecord::Base
     reversed_letters
   end
 
-
+  def self.distinct_letters(input)
+    letter_array = input.chars
+    unique_letters = letter_array.uniq
+    if unique_letters.length < letter_array.length
+      raise Exception.new("Your word must have distinct letters.")
+    end
+  end
 
 
   def self.valid_input?(input)
-    if Word.find_by_text(input).present? 
-      false
-    else
-      raise Exception.new("This word cannot be found! You can add it to the dictionary!")
-    end
-end
+    self.distinct_letters(input)
+  end
 end
 
 

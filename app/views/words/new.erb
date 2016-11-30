@@ -1,16 +1,14 @@
 <div class="wrapper-new">
-  <h1 class ="add_new">Please add a new <br><br><br><span>WORD</span></h1>
+  <h1 class ="add_new">Please add a new <br><br><br>WORD</h1>
       <%if @error %>
       <p class='error'>
         <%= @error %>
       </div>
       <% end %>
-  <form action="/" method="post" class="form">
-
-      <label class="label" for ="word" ></label>
-      <input type="text" name="word">
-
-
-    <input type="submit" name="btn" class="button button--submit" value="Show Me My New Word!">
+<form class="col-md-3" action="/" method="post">
+<div class="form-group">
+<label for="word">Enter a new word</label>
+<input class="form control" name="birthdate" type="date" />
+<input type="submit" name="btn" class="button button--submit" value="Show Me My New Word!">
   </form>
 </div>
