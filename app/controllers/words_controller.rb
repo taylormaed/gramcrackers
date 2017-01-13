@@ -9,7 +9,7 @@ get '/words/new' do
     erb :"words/new"
 end
 
-post 'words' do
+post '/words' do
     Word.create(text: params[:text])
     redirect "/words/#{word.id}"
 end
