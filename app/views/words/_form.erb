@@ -1,0 +1,18 @@
+<div class="wrapper-new">
+  <h1 class ="add_new">Please add a new <br><br><br>WORD</h1>
+      <%if @error %>
+      <p class='error'>
+        <%= @error %>
+      </div>
+      <% end %>
+  <form action="<%= words_form_action(@word) %>" method="post" id="<%= words_form_id(@word) %>" class="<%= words_form_class(@word) %>">
+  <input type="hidden" name="_method" value="<%= people_form_method(@person) %>" />
+
+
+      <label class="label" for ="word" >Please Enter a New Word</label>
+      <input type="text" name="text">
+
+
+    <input type="submit" name="btn" class="button button--submit" value="New Word!">
+
+  </form>
