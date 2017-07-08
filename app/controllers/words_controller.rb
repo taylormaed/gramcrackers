@@ -32,6 +32,9 @@ put '/words/:id' do
 		redirect "/words/#{@word.id}"
 	else 
 		@errors = "Please be sure you have entered a word."
+	end
+	erb :"/words/show"
+end
 
 get '/words/:id' do
 	@word = Word.find(params[:id])
