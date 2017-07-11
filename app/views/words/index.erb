@@ -10,6 +10,10 @@
 	<td style="text-align: center">
 		<a href="<%= "/words/#{word.id}" %>"><%= word.text %></a></td>
 		<td style="text-align: center"><%= word.letters %></td>
+		<td style="text-align: center">
+		<a href="<%= "/words/#{word.id}/edit" %>">
+		Edit </a>
+		</td>
 
 	<% end %>
 	</tbody>
