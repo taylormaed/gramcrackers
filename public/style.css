@@ -193,9 +193,18 @@ img {
 }
 
 .edit_word {
-	font-family: Montserrat;
+	 font-family: Montserrat;
   	color: #FF0049;
   	font-size: 48px;
   	text-align: center;
   	margin: auto;
+}
+
+.new_word {
+  font-family: Montserrat;
+  color: #FF0049;
+  font-size: 48px;
+  text-align: center;
+  margin: auto;
+
 }
