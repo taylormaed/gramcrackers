@@ -1,5 +1,5 @@
 <div class="wrapper-new">
-  <h1 class ="add_new">Please add a new <br><br><br>WORD</h1>
+  <h1 class="add_new">Please add a new <br><br><br>WORD</h1>
       <%if @error %>
       <p class='error'>
         <%= @error %>
@@ -9,10 +9,10 @@
   <input type="hidden" name="_method" value="<%= words_form_method(@word) %>" />
 
 
-      <label class="label" for ="word" >Please Enter a New Word</label>
+      <label class="label" for ="word" >Make changes to the app.</label>
       <input type="text" name="text">
 
 
-    <input type="submit" name="btn" class="button button--submit" value="New Word!">
+    <input type="submit" name="btn" class="button button--submit" value="Submit!">
 
   </form>
