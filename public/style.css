@@ -42,6 +42,7 @@ q:before, q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -191,7 +192,7 @@ img {
   margin: auto;
 }
 
-.edit_word h2 {
+.edit_word {
 	font-family: Montserrat;
   	color: #FF0049;
   	font-size: 40px;
