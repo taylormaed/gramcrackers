@@ -3,6 +3,7 @@
 <thead>
 	<th class="text-center">Text</th>
 	<th class="text-center">Letters</th>
+	<th class="text-center">Delete</th>
 </thead>
 <tbody>
 	<% @words.each do |word| %>
@@ -13,8 +14,12 @@
 		<td style="text-align: center">
 		<a href="<%= "/words/#{word.id}/edit" %>">
 		Edit </a>
+		<td style="text-align: center"><form action="<%= "/words/#{word.id}" %>" method="post">
+		<input type="hidden" name="_method" value="delete" />
+		<button class="btn btn-danger" type="submit">Delete</button>
+		</form>
 		</td>
-
+		</tr>
 	<% end %>
 	</tbody>
 </table>
